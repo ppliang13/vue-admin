@@ -8,6 +8,7 @@
 修改：
 .env 可以修改es安装的版本，密码与及一些配置。
 
+https://cloud.tencent.com/developer/article/2021041
 
 es 安装扩展插件：
 安转ik 分词器：
