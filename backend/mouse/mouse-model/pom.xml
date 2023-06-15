@@ -8,30 +8,15 @@
     </parent>
 
     <artifactId>mouse-model</artifactId>
-
-    <name>Maven</name>
+    <packaging>pom</packaging>
+    <name>mouse-model</name>
+    <description>功能应用模块</description>
     <url>http://maven.apache.org/</url>
-    <inceptionYear>2001</inceptionYear>
-
-    <distributionManagement>
-        <site>
-            <id>website</id>
-            <url>scp://webhost.company.com/www/website</url>
-        </site>
-    </distributionManagement>
 
     <properties>
+        <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-site-plugin</artifactId>
-                <configuration>
-                    <locales>en,fr</locales>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>

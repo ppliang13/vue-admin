@@ -9,15 +9,21 @@
 
     <artifactId>mouse-base</artifactId>
     <packaging>pom</packaging>
+    <name>mouse-base</name>
+    <description>基础模块</description>
+    <url>http://maven.apache.org/</url>
 
-    <distributionManagement>
-        <site>
-            <id>website</id>
-            <url>scp://webhost.company.com/www/website</url>
-        </site>
-    </distributionManagement>
+    <modules>
+        <module>mouse-common</module>
+        <module>mouse-utils</module>
+        <module>mouse-api</module>
+    </modules>
 
     <properties>
+        <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
+
+
 </project>
