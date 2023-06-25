@@ -12,6 +12,9 @@
     <name>mouse-service</name>
     <description>服务功能模块</description>
     <url>http://maven.apache.org/</url>
+    <modules>
+        <module>mouse-minio</module>
+    </modules>
 
 
     <properties>

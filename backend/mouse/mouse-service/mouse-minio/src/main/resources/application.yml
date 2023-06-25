@@ -1,0 +1,9 @@
+minio:
+  #minio的节点地址
+  fileUploadUrl: http://${MININ_HOST:192.168.0.109}:${MININ_PORT:9000}
+  #账号
+  accessKey: ${MININ_USER:lmoc}
+  #密码
+  secretKey: ${MININ_PWD:lmoc123456}
+  #minio的存储桶名
+  bucketName: ${MININ_BUCKET:lmoc-out-app}

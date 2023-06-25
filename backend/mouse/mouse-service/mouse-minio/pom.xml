@@ -3,43 +3,35 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.ppl</groupId>
-        <artifactId>mouse-base</artifactId>
+        <artifactId>mouse-service</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>mouse-api</artifactId>
+    <artifactId>mouse-minio</artifactId>
     <packaging>jar</packaging>
 
-    <name>mouse-api</name>
+    <name>mouse-minio</name>
     <url>http://maven.apache.org</url>
+    <description>minio 服务案例</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
-
-        <!-- web -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.6.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
-            <scope>provided</scope>
-        </dependency>
-
+        <!-- spring boot 相关依赖 -->
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.2</version>
+            <version>3.8.1</version>
             <scope>test</scope>
+        </dependency>
+        <!-- minio 相关依赖 -->
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>3.0.10</version>
         </dependency>
     </dependencies>
 </project>

@@ -1,0 +1,48 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=land_management
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    command: bash -c "apt-get update && apt-get -y install postgresql-13-postgis-3 postgresql-13-postgis-3-dbgsym postgresql-13-postgis-3-scripts  postgis && docker-entrypoint.sh postgres" #下载比较慢
+  nacos:
+    image: nacos/nacos-server:v2.1.1
+    ports:
+      - "8848:8848"
+    environment:
+      - MODE=standalone
+      - PREFER_HOST_MODE=hostname
+      - NACOS_AUTH_ENABLE=true
+    volumes:
+      - nacos_logs:/home/nacos/logs
+      - nacos_data:/home/nacos/data
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - /opt/redis/conf/redis.conf:/usr/local/etc/redis/redis.conf
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+  minio:
+    image: minio/minio:latest
+    ports:
+      - "9000:9000"
+      - "9090:9090"
+    environment:
+      - MINIO_ACCESS_KEY=lmoc
+      - MINIO_SECRET_KEY=lmoc123456
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9090"
+
+volumes:
+  postgres_data:
+  nacos_logs:
+  nacos_data:
+  minio_data:
