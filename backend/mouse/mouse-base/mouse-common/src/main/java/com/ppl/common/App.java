@@ -1,4 +1,4 @@
-package com.ppl;
+package com.ppl.common;
 
 /**
  * Hello world!

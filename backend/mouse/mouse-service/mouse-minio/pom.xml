@@ -19,14 +19,13 @@
     </properties>
 
     <dependencies>
-        <!-- spring boot 相关依赖 -->
-
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
+            <groupId>com.ppl</groupId>
+            <artifactId>mouse-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
+
         <!-- minio 相关依赖 -->
         <dependency>
             <groupId>io.minio</groupId>
