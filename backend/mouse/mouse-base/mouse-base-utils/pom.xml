@@ -3,27 +3,26 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.ppl</groupId>
-        <artifactId>mouse</artifactId>
+        <artifactId>mouse-base</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>mouser-auth</artifactId>
-    <packaging>pom</packaging>
-    <name>mouser-auth</name>
-    <description>权限路由模块</description>
-    <url>http://maven.apache.org/</url>
+    <artifactId>mouse-base-utils</artifactId>
+    <packaging>jar</packaging>
 
-
-    <modules>
-        <module>mouse-auth-gateway</module>
-        <module>mouse-auth-system</module>
-    </modules>
+    <name>mouse-utils</name>
+    <url>http://maven.apache.org</url>
 
     <properties>
-        <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>

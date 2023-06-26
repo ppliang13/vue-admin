@@ -3,21 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.ppl</groupId>
-        <artifactId>mouse</artifactId>
+        <artifactId>mouse-base</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>mouser-auth</artifactId>
-    <packaging>pom</packaging>
-    <name>mouser-auth</name>
-    <description>权限路由模块</description>
-    <url>http://maven.apache.org/</url>
+    <artifactId>mouse-base-common</artifactId>
+    <packaging>jar</packaging>
 
-
-    <modules>
-        <module>mouse-auth-gateway</module>
-        <module>mouse-auth-system</module>
-    </modules>
+    <name>mouse-common</name>
+    <url>http://maven.apache.org</url>
 
     <properties>
         <java.version>1.8</java.version>
