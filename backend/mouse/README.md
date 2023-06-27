@@ -15,12 +15,13 @@
   - mouse-demo：案例模块
   
 - mouse-service：服务模块
-  - mouse-postgresql：postgresql数据库服务模块
-  - mouse-redis：redis服务模块
-  - mouse-rocketmq：rocketmq服务模块
-  - mouse-rabbitmq：rabbitmq服务模块
-  - mouse-kafka：kafka服务模块
-  - mouse-elasticsearch：elasticsearch服务模块
+  - mouse-service-postgresql：postgresql数据库服务模块
+  - mouse-service-redis：redis服务模块
+  - mouse-service-rocketmq：rocketmq服务模块
+  - mouse-service-rabbitmq：rabbitmq服务模块
+  - mouse-service-kafka：kafka服务模块
+  - mouse-service-elasticsearch：elasticsearch服务模块
+  - mouse-service-springData：mongodb服务模块
 
 - mouse-auth：认证模块
   - mouse-auth-server：认证服务模块
