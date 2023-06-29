@@ -12,6 +12,9 @@
     <name>mouse-model</name>
     <description>功能应用模块</description>
     <url>http://maven.apache.org/</url>
+    <modules>
+        <module>mouse-model-sqltrans</module>
+    </modules>
 
     <properties>
         <java.version>1.8</java.version>
