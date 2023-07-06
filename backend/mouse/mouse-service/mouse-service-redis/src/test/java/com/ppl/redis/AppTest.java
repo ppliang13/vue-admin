@@ -1,4 +1,4 @@
-package com.ppl;
+package com.ppl.redis;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

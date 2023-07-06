@@ -3,14 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.ppl</groupId>
-        <artifactId>mouse-model</artifactId>
+        <artifactId>mouse-service</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>mouse-model-sqltrans</artifactId>
+    <artifactId>mouse-service-postgres</artifactId>
     <packaging>jar</packaging>
 
-    <name>mouse-model-sqltrans</name>
+    <name>mouse-service-postgres</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -21,21 +22,30 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.1</version>
+            <version>3.8.1</version>
+            <scope>test</scope>
         </dependency>
 
+        <!-- web -->
         <dependency>
-            <groupId>com.github.jsqlparser</groupId>
-            <artifactId>jsqlparser</artifactId>
-            <version>4.6</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version>
         </dependency>
 
-        <!-- postgresql -->
+        <!-- mybatis-plus -->
         <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.3.3</version>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.4.2</version>
         </dependency>
+
+        <!-- postgres -->
+         <dependency>
+             <groupId>org.postgresql</groupId>
+             <artifactId>postgresql</artifactId>
+             <version>42.2.19</version>
+         </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -45,19 +55,11 @@
         </dependency>
 
 
+
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.78</version>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.10</version>
         </dependency>
-
-        <!-- Calcite core -->
-        <dependency>
-            <groupId>org.apache.calcite</groupId>
-            <artifactId>calcite-core</artifactId>
-            <version>1.28.0</version>
-        </dependency>
-
-
     </dependencies>
 </project>

@@ -77,9 +77,8 @@ public class MyPlainSelect extends PlainSelect{
         return fromItem;
     }
 
-    public void setFromItem(Object fromItem) {
-
-        this.fromItem = (FromItem)fromItem;
+    public void setFromItem(FromItem fromItem) {
+        this.fromItem = fromItem;
     }
 
     public List<Join> getJoins() {

@@ -108,7 +108,7 @@ public class ObjectToSqlTest {
          */
         AndExpression andExpression = new AndExpression(orExpression, finalCondition);
 
-        plainSelect.withSelectItems(selectItems).withFromItem(studentTable).withWhere(finalCondition);
+        plainSelect.withSelectItems(selectItems).withFromItem(studentTable).withWhere(andExpression);
         String sql = plainSelect.toString();
         String jsonString = JSON.toJSONString(plainSelect);
 
@@ -117,8 +117,8 @@ public class ObjectToSqlTest {
         ObjectMapper objectMapper = new ObjectMapper();
 
 
-//       PlainSelect plainSelect1 = objectMapper.readValue(jsonString, PlainSelect.class);
-//       System.out.println("plainSelect1 = " + plainSelect1);
+       PlainSelect plainSelect1 = objectMapper.readValue(jsonString, PlainSelect.class);
+       System.out.println("plainSelect1 = " + plainSelect1);
 
         System.out.println(sql);
     }

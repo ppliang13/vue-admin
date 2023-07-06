@@ -1,4 +1,4 @@
-package com.ppl;
+package com.ppl.redis;
 
 /**
  * Hello world!

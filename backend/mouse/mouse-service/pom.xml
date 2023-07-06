@@ -12,10 +12,12 @@
     <name>mouse-service</name>
     <description>服务功能模块</description>
     <url>http://maven.apache.org/</url>
+
     <modules>
         <module>mouse-service-minio</module>
         <module>mouse-service-thread</module>
         <module>mouse-service-redis</module>
+        <module>mouse-service-postgres</module>
     </modules>
 
 
