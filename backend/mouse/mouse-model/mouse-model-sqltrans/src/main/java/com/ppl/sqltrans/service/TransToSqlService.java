@@ -12,4 +12,6 @@ public interface TransToSqlService {
 
 
     String toSql2();
+
+    String testAsync(Integer size)  throws InterruptedException;
 }

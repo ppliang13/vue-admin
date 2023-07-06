@@ -1,0 +1,58 @@
+{
+  "emitChanges": false,
+  "forUpdate": false,
+  "fromItem": {
+    "dBLinkName": "student",
+    "database": {
+      "fullyQualifiedName": ""
+    },
+    "fullyQualifiedName": "student",
+    "name": "student",
+    "nameParts": [
+      "student"
+    ]
+  },
+  "mySqlHintStraightJoin": false,
+  "mySqlSqlCalcFoundRows": false,
+  "noWait": false,
+  "oracleSiblings": false,
+  "selectItems": [
+    {
+      "expression": {}
+    }
+  ],
+  "skipLocked": false,
+  "useBrackets": false,
+  "where": {
+    "leftExpression": {
+      "leftExpression": {
+        "columnName": "age",
+        "fullyQualifiedName": "age"
+      },
+      "oldOracleJoinSyntax": 0,
+      "oraclePriorPosition": 0,
+      "rightExpression": {
+        "bigIntegerValue": 18,
+        "stringValue": "18",
+        "value": 18
+      },
+      "stringExpression": ">"
+    },
+    "rightExpression": {
+      "leftExpression": {
+        "columnName": "sex",
+        "fullyQualifiedName": "sex"
+      },
+      "oldOracleJoinSyntax": 0,
+      "oraclePriorPosition": 0,
+      "rightExpression": {
+        "bigIntegerValue": 1,
+        "stringValue": "1",
+        "value": 1
+      },
+      "stringExpression": "="
+    },
+    "stringExpression": "AND",
+    "useOperator": false
+  }
+}

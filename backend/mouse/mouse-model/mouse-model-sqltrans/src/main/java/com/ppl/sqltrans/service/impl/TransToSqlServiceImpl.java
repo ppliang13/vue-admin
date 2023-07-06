@@ -7,6 +7,7 @@ import net.sf.jsqlparser.expression.LongValue;
 import net.sf.jsqlparser.schema.Column;
 import net.sf.jsqlparser.schema.Table;
 import net.sf.jsqlparser.statement.select.*;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -60,5 +61,19 @@ public class TransToSqlServiceImpl implements TransToSqlService {
         String sql = plainSelect.toString();
 
         return sql;
+    }
+
+
+    public String testAsync(Integer size) throws InterruptedException {
+        long l = System.currentTimeMillis();
+        for (Integer integer = 0; integer < size; integer++) {
+            testAsync();
+        }
+        return "耗时：" + (System.currentTimeMillis() - l);
+    }
+
+    @Async
+    public void testAsync() throws InterruptedException {
+        Thread.sleep(1000L);
     }
 }

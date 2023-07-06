@@ -2,8 +2,12 @@ package com.ppl.sqltrans.select;
 
 
 import com.alibaba.fastjson.JSON;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import net.sf.jsqlparser.expression.Alias;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.LongValue;
@@ -65,7 +69,7 @@ public class ObjectToSqlTest {
      * 查询条件设置
      */
     @Test
-    public void selectWhere(){
+    public void selectWhere() throws JsonProcessingException {
         PlainSelect plainSelect = new PlainSelect();
         Table studentTable = new Table("student");
 
@@ -107,7 +111,15 @@ public class ObjectToSqlTest {
         plainSelect.withSelectItems(selectItems).withFromItem(studentTable).withWhere(finalCondition);
         String sql = plainSelect.toString();
         String jsonString = JSON.toJSONString(plainSelect);
+
+
         System.out.println("jsonString = " + jsonString);
+        ObjectMapper objectMapper = new ObjectMapper();
+
+
+//       PlainSelect plainSelect1 = objectMapper.readValue(jsonString, PlainSelect.class);
+//       System.out.println("plainSelect1 = " + plainSelect1);
+
         System.out.println(sql);
     }
 

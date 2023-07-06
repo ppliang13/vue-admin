@@ -1,8 +1,11 @@
 package com.ppl.sqltrans.controller;
 
+import com.ppl.sqltrans.pojo.ps.MyPlainSelect;
 import com.ppl.sqltrans.service.TransToSqlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -21,7 +24,14 @@ public class TransController {
 
 
     @GetMapping("/hello")
-    public String hello() {
-        return transService.toSql2();
+    public String hello(@RequestParam Integer size) throws InterruptedException {
+        return transService.testAsync(size);
+    }
+
+
+    @GetMapping("/toSql")
+    public String toSql(@RequestBody MyPlainSelect plainSelect) {
+
+        return transService.toSql(plainSelect);
     }
 }
