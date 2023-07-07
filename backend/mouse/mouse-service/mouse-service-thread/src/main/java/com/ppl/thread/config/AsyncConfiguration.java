@@ -22,8 +22,8 @@ public class AsyncConfiguration {
     @Bean("asyncExecutor2")
     public ThreadPoolTaskExecutor asyncExecutor2() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(10); // 设置核心线程数
-        executor.setMaxPoolSize(20); // 设置最大线程数
+        executor.setCorePoolSize(20); // 设置核心线程数
+        executor.setMaxPoolSize(30); // 设置最大线程数
         executor.setQueueCapacity(200); // 设置队列大小
         executor.setThreadNamePrefix("线程池2-"); // 设置线程名前缀
         executor.initialize();

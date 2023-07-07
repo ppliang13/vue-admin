@@ -9,5 +9,10 @@ public interface AsyncService {
      * 异步线程
      */
     void async();
+
+
+    void future(int size);
+
+    void testThreadList();
 }
 
