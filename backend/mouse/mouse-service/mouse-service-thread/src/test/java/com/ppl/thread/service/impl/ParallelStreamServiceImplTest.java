@@ -3,13 +3,10 @@ package com.ppl.thread.service.impl;
 import com.ppl.thread.service.AsyncService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Created by pisiliang on 2023/7/8 19:54

@@ -1,8 +1,5 @@
 package com.ppl.thread.service.impl;
 
-
-
-
 import com.ppl.thread.service.AsyncService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
