@@ -13,6 +13,6 @@ public interface AsyncService {
 
     void future(int size);
 
-    void testThreadList();
+    void testThreadList(int size);
 }
 

@@ -40,7 +40,7 @@ public class AsyncServiceImplTest  {
 
     @Test
     public void testThreadList() {
-        asyncService.testThreadList();
+        asyncService.testThreadList(10);
         System.out.println("asyncService异步线程执行");
     }
 

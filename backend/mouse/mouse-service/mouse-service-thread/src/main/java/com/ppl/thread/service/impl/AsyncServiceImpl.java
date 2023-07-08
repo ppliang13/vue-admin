@@ -46,13 +46,10 @@ public class AsyncServiceImpl implements AsyncService {
             int finalI = i;
             Future future = executor.submit(() -> {
                 try {
-                    Thread.sleep(2000L);
-                    String threadName = Thread.currentThread().getName();
-                    System.out.println(threadName);
+                    Thread.sleep(1000L);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
-                System.out.println(finalI +"异步线程执行完毕");
             });
             futures.add(future);
         }
@@ -71,9 +68,9 @@ public class AsyncServiceImpl implements AsyncService {
     @Autowired
     private ThreadListService<People,Student> threadListService;
 
-    public void testThreadList() {
+    public void testThreadList(int size) {
         ArrayList<People> peoples = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < size; i++) {
             People people = new People();
             people.setName("name"+i);
             people.setAge(i+"");
@@ -88,9 +85,7 @@ public class AsyncServiceImpl implements AsyncService {
             return student;
         });
 
-        for (Student student : students) {
-            System.out.println("student = " + student);
-        }
+        System.out.println("list = " + students);
 
     }
 
