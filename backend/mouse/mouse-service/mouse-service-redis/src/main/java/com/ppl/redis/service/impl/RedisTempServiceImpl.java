@@ -16,13 +16,13 @@ import java.util.List;
 public class RedisTempServiceImpl implements RedisTempService {
 
     @Resource
-    private RedisTemplate<String, Student> redisTemplate;
+    private RedisTemplate<String, Student> studentRedisTemplate;
 
     private final String REDIS_KEY = "student:";
 
     public List<Student> saveStudent(List<Student> list) {
         for (Student student : list) {
-            redisTemplate.opsForValue().set(REDIS_KEY + student.getId(), student);
+            studentRedisTemplate.opsForValue().set(REDIS_KEY + student.getId(), student);
         }
         return list;
     }

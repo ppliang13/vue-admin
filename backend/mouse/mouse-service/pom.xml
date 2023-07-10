@@ -18,6 +18,7 @@
         <module>mouse-service-thread</module>
         <module>mouse-service-redis</module>
         <module>mouse-service-postgres</module>
+        <module>mouse-service-file</module>
     </modules>
 
 
