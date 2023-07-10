@@ -17,8 +17,9 @@ import java.util.function.Function;
 @Service
 public class ThreadListServiceImpl implements ThreadListService {
 
+
     @Autowired
-    @Qualifier("asyncExecutor2")
+    @Qualifier("asyncExecutor2")//指定线程池
     private ThreadPoolTaskExecutor executor;
 
 
