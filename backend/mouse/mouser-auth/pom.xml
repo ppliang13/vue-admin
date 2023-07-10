@@ -17,6 +17,7 @@
     <modules>
         <module>mouse-auth-gateway</module>
         <module>mouse-auth-system</module>
+        <module>mouse-auth-aop</module>
     </modules>
 
     <properties>
