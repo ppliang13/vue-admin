@@ -10,7 +10,7 @@
     <artifactId>mouse-service-minio</artifactId>
     <packaging>jar</packaging>
 
-    <name>mouse-minio</name>
+    <name>mouse-service-minio</name>
     <url>http://maven.apache.org</url>
     <description>minio 服务案例</description>
 
