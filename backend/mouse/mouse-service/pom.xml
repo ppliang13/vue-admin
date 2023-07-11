@@ -19,6 +19,7 @@
         <module>mouse-service-redis</module>
         <module>mouse-service-postgres</module>
         <module>mouse-service-file</module>
+        <module>mybatispuls-generation</module>
     </modules>
 
 

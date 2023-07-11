@@ -10,7 +10,7 @@ services:
       - POSTGRES_DB=land_management
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    command: bash -c "apt-get update && apt-get -y install postgresql-13-postgis-3 postgresql-13-postgis-3-dbgsym postgresql-13-postgis-3-scripts  postgis && docker-entrypoint.sh postgres" #下载比较慢
+    #command: bash -c "apt-get update && apt-get -y install postgresql-13-postgis-3 postgresql-13-postgis-3-dbgsym postgresql-13-postgis-3-scripts  postgis && docker-entrypoint.sh postgres" #下载比较慢
   nacos:
     image: nacos/nacos-server:v2.1.1
     ports:
