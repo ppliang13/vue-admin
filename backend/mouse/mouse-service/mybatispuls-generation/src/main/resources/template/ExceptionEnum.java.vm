@@ -1,0 +1,41 @@
+package ${packageName}.${modularName}.${busName}.enums;
+
+import th.lmoc.common.annotion.ExpEnumType;
+import th.lmoc.common.exception.enums.abs.AbstractBaseExceptionEnum;
+import th.lmoc.common.factory.ExpEnumCodeFactory;
+import th.lmoc.sys.core.consts.SysEnumConstant;
+
+/**
+ * ${functionName}
+ *
+ * @author ${authorName}
+ * @date ${createDateString}
+ */
+@ExpEnumType(module = SysEnumConstant.SNOWY_SYS_MODULE_EXP_CODE)
+public enum ${ClassName}ExceptionEnum implements AbstractBaseExceptionEnum {
+
+    /**
+     * 数据不存在
+     */
+    NOT_EXIST(1, "此数据不存在");
+
+    private final Integer code;
+
+    private final String message;
+
+    ${ClassName}ExceptionEnum(Integer code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
+    @Override
+    public Integer getCode() {
+        return ExpEnumCodeFactory.getExpEnumCode(this.getClass(), code);
+    }
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
+}

@@ -1,0 +1,86 @@
+import { axios } from '@/utils/request'
+
+/**
+ * 查询${functionName}
+ *
+ * @author ${authorName}
+ * @date ${createDateString}
+ */
+export function ${className}Page (parameter) {
+  return axios({
+    url: '/${microName}/${className}/page',
+    method: 'get',
+    params: parameter
+  })
+}
+
+/**
+ * ${functionName}列表
+ *
+ * @author ${authorName}
+ * @date ${createDateString}
+ */
+export function ${className}List (parameter) {
+  return axios({
+    url: '/${microName}/${className}/list',
+    method: 'get',
+    params: parameter
+  })
+}
+
+/**
+ * 添加${functionName}
+ *
+ * @author ${authorName}
+ * @date ${createDateString}
+ */
+export function ${className}Add (parameter) {
+  return axios({
+    url: '/${microName}/${className}/add',
+    method: 'post',
+    data: parameter
+  })
+}
+
+/**
+ * 编辑${functionName}
+ *
+ * @author ${authorName}
+ * @date ${createDateString}
+ */
+export function ${className}Edit (parameter) {
+  return axios({
+    url: '/${microName}/${className}/edit',
+    method: 'post',
+    data: parameter
+  })
+}
+
+/**
+ * 删除${functionName}
+ *
+ * @author ${authorName}
+ * @date ${createDateString}
+ */
+export function ${className}Delete (parameter) {
+  return axios({
+    url: '/${microName}/${className}/delete',
+    method: 'post',
+    data: parameter
+  })
+}
+
+/**
+ * 导出${functionName}
+ *
+ * @author ${authorName}
+ * @date ${createDateString}
+ */
+export function ${className}Export (parameter) {
+  return axios({
+    url: '/${microName}/${className}/export',
+    method: 'get',
+    params: parameter,
+    responseType: 'blob'
+  })
+}
