@@ -5,7 +5,7 @@ package com.ppl.vueadmin.service.impl;
  * windows 命令转为 linux 命令
  * Created by pisiliang on 2023/7/11 14:36
  */
-public class DockerCmdImpl {
+public class DockerServiceImpl {
 
     /**
      * linux 命令转为 windows 命令

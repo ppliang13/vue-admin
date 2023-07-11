@@ -1,13 +1,14 @@
-CREATE TABLE sys_user (
-                          id SERIAL PRIMARY KEY,
-                          username VARCHAR(100) NOT NULL,
-                          password VARCHAR(100) NOT NULL,
-                          email VARCHAR(255),
-                          phone VARCHAR(20),
-                          avatar VARCHAR(255),
-                          status INTEGER,
-                          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                          updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE sys_user
+(
+    id         SERIAL PRIMARY KEY,
+    username   VARCHAR(100) NOT NULL,
+    password   VARCHAR(100) NOT NULL,
+    email      VARCHAR(255),
+    phone      VARCHAR(20),
+    avatar     VARCHAR(255),
+    status     INTEGER,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 COMMENT ON TABLE sys_user IS '用户表';
@@ -21,15 +22,16 @@ COMMENT ON COLUMN sys_user.status IS '状态';
 COMMENT ON COLUMN sys_user.created_at IS '创建时间';
 COMMENT ON COLUMN sys_user.updated_at IS '更新时间';
 
-CREATE TABLE str_method (
-                            id SERIAL PRIMARY KEY,
-                            method_name VARCHAR(100) NOT NULL,
-                            method_description TEXT,
-                            method_class_object VARCHAR(255),
-                            method_class_method VARCHAR(255),
-                            method_class_parameters JSONB,
-                            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE str_method
+(
+    id                      SERIAL PRIMARY KEY,
+    method_name             VARCHAR(100) NOT NULL,
+    method_description      VARCHAR(255),
+    method_class_object     VARCHAR(255),
+    method_class_method     VARCHAR(255),
+    method_class_parameters VARCHAR(255),
+    created_at              TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at              TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 COMMENT ON TABLE str_method IS '底层方法表';
@@ -44,14 +46,15 @@ COMMENT ON COLUMN str_method.created_at IS '创建时间';
 COMMENT ON COLUMN str_method.updated_at IS '更新时间';
 
 
-CREATE TABLE str_step (
-                          id SERIAL PRIMARY KEY,
-                          step_name VARCHAR(100) NOT NULL,
-                          step_description TEXT,
-                          method_id INT,
-                          step_class_parameters JSONB,
-                          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                          updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE str_step
+(
+    id                    SERIAL PRIMARY KEY,
+    step_name             VARCHAR(100) NOT NULL,
+    step_description      VARCHAR(255),
+    method_id             INT,
+    step_class_parameters VARCHAR(255),
+    created_at            TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at            TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 COMMENT ON TABLE str_step IS '步骤表';
@@ -64,15 +67,16 @@ COMMENT ON COLUMN str_step.step_class_parameters IS '步骤类参数';
 COMMENT ON COLUMN str_step.created_at IS '创建时间';
 COMMENT ON COLUMN str_step.updated_at IS '更新时间';
 
-CREATE TABLE str_flow (
-                          id SERIAL PRIMARY KEY,
-                          flow_name VARCHAR(100) NOT NULL,
-                          flow_description TEXT,
-                          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                          updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                          status INTEGER,
-                          creator VARCHAR(100),
-                          updater VARCHAR(100)
+CREATE TABLE str_flow
+(
+    id               SERIAL PRIMARY KEY,
+    flow_name        VARCHAR(100) NOT NULL,
+    flow_description VARCHAR(255),
+    created_at       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at       TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status           INTEGER,
+    creator          VARCHAR(100),
+    updater          VARCHAR(100)
 );
 
 COMMENT ON TABLE str_flow IS '流程表';
@@ -87,12 +91,13 @@ COMMENT ON COLUMN str_flow.creator IS '创建人';
 COMMENT ON COLUMN str_flow.updater IS '更新人';
 
 
-CREATE TABLE str_flow_step (
-                               id SERIAL PRIMARY KEY,
-                               flow_id INT,
-                               step_id INT,
-                               created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                               updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE str_flow_step
+(
+    id         SERIAL PRIMARY KEY,
+    flow_id    INT,
+    step_id    INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 COMMENT ON TABLE str_flow_step IS '流程与步骤关联表';

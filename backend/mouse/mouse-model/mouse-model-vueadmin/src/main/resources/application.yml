@@ -1,0 +1,66 @@
+server:
+  port: 12101
+  servlet:
+    context-path: /vue-admin
+
+#改为NACOS配置中心管理，通过在线NACOS管理，此处配置仅做参考
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:vue-admin}?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT&stringtype=unspecified
+    username: ${DB_USER:postgres}
+    password: ${DB_PWD:postgres}
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 10
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+  servlet:
+    multipart:
+      max-request-size: 1000MB
+      max-file-size: 1000MB
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss.SSS
+    locale: zh_CN
+    serialization:
+      # 格式化输出
+      indent_output: false
+  main:
+    allow-circular-references: true
+
+  #redis相关配置
+  redis:
+    #数据库索引
+    database: ${REDIS_DB:1}
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PWD:redis}
+    #连接超时时间
+    timeout: 5000
+
+#mybaits相关配置
+mybatis-plus:
+  mapper-locations: classpath*:com/ppl/**/mapping/*.xml, classpath:/META-INF/modeler-mybatis-mappings/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+    lazy-loading-enabled: true
+    multiple-result-sets-enabled: true
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+  global-config:
+    banner: false
+    db-config:
+      id-type: assign_id
+      table-underline: true
+    enable-sql-runner: true
+  configuration-properties:
+    prefix:
+    #如果数据库为postgresql，则需要配置为blobType: BINARY
+    blobType: BINARY
+    #如果数据库为oracle或mssql，则需要配置为boolValue: 1
+    boolValue: true
+
