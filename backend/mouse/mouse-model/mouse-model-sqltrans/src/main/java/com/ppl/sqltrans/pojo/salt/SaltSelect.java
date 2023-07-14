@@ -16,7 +16,7 @@ import net.sf.jsqlparser.statement.Statement;
 @Data
 @Accessors(chain = true)
 public class SaltSelect {
-    private boolean isEncrypt;
+    private boolean encrypt;
 
     private String selectColumn;
 
@@ -40,7 +40,7 @@ public class SaltSelect {
      * @return SaltSelect
      */
     public SaltSelect encrypt() {
-        if (isEncrypt) {
+        if (encrypt) {
             return this;
         }
         this.selectColumn = EncryptionSelectSql.encrypt(this.selectColumn);
@@ -49,7 +49,7 @@ public class SaltSelect {
         this.groupBy = EncryptionSelectSql.encrypt(this.groupBy);
         this.havingCondition = EncryptionSelectSql.encrypt(this.havingCondition);
         this.orderBy = EncryptionSelectSql.encrypt(this.orderBy);
-        this.isEncrypt = true;
+        this.encrypt = true;
         return this;
     }
 
@@ -60,7 +60,7 @@ public class SaltSelect {
      * @return SaltSelect
      */
     public SaltSelect decrypt() {
-        if (!isEncrypt) {
+        if (!encrypt) {
             return this;
         }
         this.selectColumn = EncryptionSelectSql.decrypt(this.selectColumn);
@@ -69,7 +69,7 @@ public class SaltSelect {
         this.groupBy = EncryptionSelectSql.decrypt(this.groupBy);
         this.havingCondition = EncryptionSelectSql.decrypt(this.havingCondition);
         this.orderBy = EncryptionSelectSql.decrypt(this.orderBy);
-        this.isEncrypt = false;
+        this.encrypt = false;
         return this;
     }
 
@@ -78,7 +78,7 @@ public class SaltSelect {
      * @return SaltSelect
      */
     public String sql() {
-        if (isEncrypt) {
+        if (encrypt) {
             decrypt();
         }
         if (StrUtil.isBlank(this.selectColumn)) {
