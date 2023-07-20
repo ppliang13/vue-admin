@@ -54,4 +54,13 @@ public class EncryptionSelectSql {
             return null;
         }
     }
+
+    public static void main(String[] args) {
+        String decrypt = EncryptionSelectSql.encrypt("\na \ns d\tf Given final block not properly padded. Such issues can arise if a bad key is used during decryption.Given final block not properly padded. Such issues can arise if a bad key is used during decryptionGiven final block not properly padded. Such issues can arise if a bad key is used during decryptionGiven final block not properly padded. Such issues can arise if a bad key is used during decryptionGiven final block not properly padded. Such issues can arise if a bad key is used during decryptionGiven final block not properly padded. Such issues can arise if a bad key is used during decryptionGiven final block not properly padded. Such issues can arise if a bad key is used during decryption");
+        System.out.println(decrypt);
+        String decrypt1 = EncryptionSelectSql.decrypt(decrypt);
+        System.out.println(
+                decrypt1
+        );
+    }
 }

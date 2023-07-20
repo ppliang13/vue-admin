@@ -22,6 +22,14 @@ public class SaltSelect {
 
     private String fromTable;
 
+    /**
+     * GreaterThan 表示大于（例如 column1 > 10）
+     * GreaterThanEquals 表示大于等于（例如 column2 >= 5）
+     * MinorThan 表示小于（例如 column3 < 20）
+     * MinorThanEquals 表示小于等于（例如 column4 <= 30）
+     * InExpression 表示 in 操作符（例如 column5 IN ('value1', 'value2', 'value3')）
+     * LikeExpression 表示 like 操作符（例如 column6 LIKE '%keyword%'）
+     */
     private String whereCondition;
 
 

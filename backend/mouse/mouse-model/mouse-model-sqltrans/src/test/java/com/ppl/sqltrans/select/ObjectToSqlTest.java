@@ -2,16 +2,11 @@ package com.ppl.sqltrans.select;
 
 
 import com.alibaba.fastjson.JSON;
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import net.sf.jsqlparser.expression.Alias;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.LongValue;
-import net.sf.jsqlparser.expression.operators.conditional.AndExpression;
 import net.sf.jsqlparser.expression.operators.conditional.OrExpression;
 import net.sf.jsqlparser.expression.operators.relational.EqualsTo;
 import net.sf.jsqlparser.expression.operators.relational.GreaterThan;
@@ -88,6 +83,8 @@ public class ObjectToSqlTest {
          * GreaterThanEquals >= 大于等于
          * MinorThan < 小于
          * MinorThanEquals <= 小于等于
+         * in
+         * like
          */
         Expression condition1 = new GreaterThan().withLeftExpression(ageColumn).withRightExpression(new LongValue(18));
         Column sexColumn = new Column("sex");
@@ -96,31 +93,37 @@ public class ObjectToSqlTest {
         /**
          * 查询条件 与
          */
-        Expression finalCondition = new AndExpression(condition1, condition2);
+//        Expression finalCondition = new AndExpression(condition1, condition2);
 
         /**
          * 查询条件 或
          */
         OrExpression orExpression = new OrExpression(condition1, condition2);
+        //orExpression.
+
+
 
         /**
          * 查询条件 与 或
          */
-        AndExpression andExpression = new AndExpression(orExpression, finalCondition);
+        //AndExpression andExpression = new AndExpression(orExpression, finalCondition);
 
-        plainSelect.withSelectItems(selectItems).withFromItem(studentTable).withWhere(andExpression);
-        String sql = plainSelect.toString();
-        String jsonString = JSON.toJSONString(plainSelect);
+        //String stringExpression = andExpression.toString();
+        //System.out.println("stringExpression = " + stringExpression);
+
+//        plainSelect.withSelectItems(selectItems).withFromItem(studentTable).withWhere(andExpression);
+//        String sql = plainSelect.toString();
+//        String jsonString = JSON.toJSONString(plainSelect);
 
 
-        System.out.println("jsonString = " + jsonString);
-        ObjectMapper objectMapper = new ObjectMapper();
-
-
-       PlainSelect plainSelect1 = objectMapper.readValue(jsonString, PlainSelect.class);
-       System.out.println("plainSelect1 = " + plainSelect1);
-
-        System.out.println(sql);
+//        System.out.println("jsonString = " + jsonString);
+//        ObjectMapper objectMapper = new ObjectMapper();
+//
+//
+//       PlainSelect plainSelect1 = objectMapper.readValue(jsonString, PlainSelect.class);
+//       System.out.println("plainSelect1 = " + plainSelect1);
+//
+//        System.out.println(sql);
     }
 
 
