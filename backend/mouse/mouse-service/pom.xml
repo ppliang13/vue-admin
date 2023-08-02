@@ -20,6 +20,7 @@
         <module>mouse-service-postgres</module>
         <module>mouse-service-file</module>
         <module>mybatispuls-generation</module>
+        <module>mouse-service-jpa</module>
     </modules>
 
 
