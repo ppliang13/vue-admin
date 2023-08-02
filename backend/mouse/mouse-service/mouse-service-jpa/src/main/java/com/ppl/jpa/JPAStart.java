@@ -1,10 +1,10 @@
-package com.ppl;
+package com.ppl.jpa;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class JPAStart
 {
     public static void main( String[] args )
     {
