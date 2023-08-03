@@ -23,6 +23,7 @@
         <!--cloud boot 版本控制-->
         <spring-boot.version>2.6.13</spring-boot.version>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
 
         <fastjson.version>1.2.70</fastjson.version>
         <hutool.version>5.8.10</hutool.version>
@@ -48,6 +49,14 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- SpringCloud Alibaba -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
             <!--fastjson-->
             <dependency>
@@ -56,7 +65,7 @@
                 <version>${fastjson.version}</version>
             </dependency>
 
-            <!--hutool-->
+            <!--hutool 工具-->
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>

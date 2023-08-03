@@ -1,7 +1,7 @@
 package com.ppl.api.demo.controller;
 
-import com.ppl.api.demo.pojo.model.req.StudentReq;
-import com.ppl.api.demo.pojo.model.vo.StudentVo;
+import com.ppl.api.demo.entity.model.req.StudentReq;
+import com.ppl.api.demo.entity.model.vo.StudentVo;
 import com.ppl.api.demo.service.StudentService;
 import com.ppl.common.controller.BaseController;
 import com.ppl.common.pojo.response.ResponseData;

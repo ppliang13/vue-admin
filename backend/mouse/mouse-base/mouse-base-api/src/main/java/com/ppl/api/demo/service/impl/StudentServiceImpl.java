@@ -2,10 +2,9 @@ package com.ppl.api.demo.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.ppl.api.demo.mapper.mapping.StudentMapping;
-import com.ppl.api.demo.pojo.model.db.StudentDb;
-import com.ppl.api.demo.pojo.model.dto.StudentDto;
-import com.ppl.api.demo.pojo.model.req.StudentReq;
-import com.ppl.api.demo.pojo.model.vo.StudentVo;
+import com.ppl.api.demo.entity.model.dto.StudentDto;
+import com.ppl.api.demo.entity.model.req.StudentReq;
+import com.ppl.api.demo.entity.model.vo.StudentVo;
 import com.ppl.api.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

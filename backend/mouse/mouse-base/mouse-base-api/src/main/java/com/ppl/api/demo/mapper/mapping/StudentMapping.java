@@ -2,8 +2,8 @@ package com.ppl.api.demo.mapper.mapping;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.ppl.api.demo.mapper.StudentMapper;
-import com.ppl.api.demo.pojo.model.db.StudentDb;
-import com.ppl.api.demo.pojo.model.dto.StudentDto;
+import com.ppl.api.demo.entity.model.db.StudentDb;
+import com.ppl.api.demo.entity.model.dto.StudentDto;
 import org.springframework.stereotype.Service;
 
 /**
